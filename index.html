@@ -1,0 +1,131 @@
+<!doctype html>
+<html ng-app="website">
+
+<head>
+    <!-- All the meta properties here  -->
+    <link rel="stylesheet" type="text/css" href="assets/css/base.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="bower/angular-fx/dist/angular-fx.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+    <title>Angular Starter Kit</title>
+</head>
+
+<body class="bg-body" id="body" ng-controller="Ctrl">
+    <div class="line-compress fixed layer1 top navbar">
+        <div class="navbar-menu">
+            <div class="separator15"></div>
+            <div class="line">
+                <div class="col12 nav" id="top-menu">
+                    <div class="line-compress">
+                        <div class="line center-content">
+                            <div class="separator5"></div>
+                            <div class="desktop tablet">
+                                <a href="#home" ng-click="setActiveLink('home')" ng-class="{'active': activeLink === 'home'}">
+									Home
+								</a>
+								<a href="#basics" ng-click="setActiveLink('basics')" ng-class="{'active': activeLink === 'basics'}">
+									Basics
+								</a>
+                                <a href="#todo" ng-click="setActiveLink('todo')" ng-class="{'active': activeLink === 'todo'}">
+									ToDo
+								</a>
+                                <a href="#" ng-click="setActiveLink('ajax')" ng-class="{'active': activeLink === 'ajax'}">
+									Ajax
+								</a>
+                            </div>
+                            <div class="mobile">
+                                <a href="#basics" ng-click="setActiveLink('basics')" ng-class="{'active': activeLink !== 'basics'}">
+                                    <i class="fa fa-bookmark-o"></i>
+                                </a>
+                                <a href="#todo" ng-click="setActiveLink('todo')" ng-class="{'active': activeLink !== 'todo'}">
+                                    <i class="fa fa-at"></i>
+                                </a>
+
+                                <a href="#" ng-click="setActiveLink('ajax')" ng-class="{'active': activeLink === 'ajax'}">
+									Ajax
+								</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="separator15"></div>
+        </div>
+    </div>
+    <div id="home" class="line article" ng-show="activeLink === 'home'">
+        <div class="page-home">
+            <section>
+                <h1 class="page-title">Angular<br>Starter Kit</h1>
+                
+                <a href="https://github.com/DevTips/DevTips-Starter-Kit/archive/master.zip" class="button button-download">Download Now</a>
+                <a class="fork-tag" href="#">Fork Me on GitHub</a>
+            </section>
+            
+            <!-- <img src="assets/img/thumbnail.jpg"> -->
+        </div>
+    </div>
+    <!-- Basics -->
+    <div id="basics" class="line article" ng-show="activeLink === 'basics'">
+        <div class="page-home">
+	        <section>
+	        	<div>
+					<h2>The Basics</h2>
+				    <label>Name:</label>
+				    <input class="w90" type="text" ng-model="yourName" placeholder="Enter a name here">
+				    <br>
+				    <h4>Hello {{yourName}}!</h4>
+			    </div>
+	        </section>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- todo -->
+    <div id="todo" class="line article" ng-show="activeLink === 'todo'">
+    	<div class="page-home">
+    		<section>
+    			<h2>Todo</h2>
+			    <div ng-controller="TodoListController as todoList" class="todoFormSection">
+			      <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
+			      [ <a href="" ng-click="todoList.archive()">archive</a> ]
+			      <ul class="unstyled todoList">
+			        <li ng-repeat="todo in todoList.todos">
+			          <input type="checkbox" ng-model="todo.done">
+			          <span class="done-{{todo.done}}">{{todo.text}}</span>
+			        </li>
+			      </ul>
+			      <form class="todoForm"  ng-submit="todoList.addTodo()">
+			        <input type="text" ng-model="todoList.todoText"  size="30"
+			               placeholder="add new todo here">
+			        <input class="btn-primary" type="submit" value="add">
+			      </form>
+			    </div>		
+    		</section>
+    	</div>
+        
+
+    </div>
+    <!-- ajax -->
+    <div id="ajax" class="line article" ng-show="activeLink === 'ajax'">
+        <div class="page-home">
+	        <section>
+	        	<div>
+					<h2>In progress</h2>
+			    </div>
+	        </section>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular-route.js"></script>
+    <script src="bower/angular-fx/dist/angular-fx.min.js"></script>
+    <script src="assets/js/index.js"></script>
+    
+</body>
+
+</html>

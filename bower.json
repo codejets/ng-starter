@@ -1,0 +1,22 @@
+{
+  "name": "ng-basic",
+  "authors": [
+    "codejets <codejets@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "bower/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-fx": "~1.1.0"
+  }
+}
